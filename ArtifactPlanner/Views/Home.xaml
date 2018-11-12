@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="ArtifactPlanner.Views.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:local="using:ArtifactPlanner.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <controls:Expander x:Name="CreateDeckExpander"
+                                   Header="Create a new deck!"
+                                   HorizontalContentAlignment="Stretch"
+                                   VerticalContentAlignment="Stretch"
+                                   IsExpanded="True"
+                                   ExpandDirection="Down"
+                                   Grid.Row="0">
+            <controls:UniformGrid 
+                        FirstColumn="0"
+                        Orientation="Horizontal"
+                        Rows="1"
+                        Columns="5"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch">
+                <Button x:Name="CreateDeck1" Background="DarkCyan" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" BorderThickness="1" BorderBrush="DarkGray" Click="CreateEmptyDeck">
+                    <TextBlock Text="Empty Deck Recipe" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="14" HorizontalTextAlignment="Center"/>
+                </Button>
+                <Button x:Name="CreateDeck2" Background="DarkRed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" BorderThickness="1" BorderBrush="DarkGray" Click="TestDeckSaving">
+                    <TextBlock Text="Red Deck Recipe" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" HorizontalTextAlignment="Center"/>
+                </Button>
+                <Button x:Name="CreateDeck3" Background="DarkGreen" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" BorderThickness="1" BorderBrush="DarkGray" Click="ShowRoamingFileHandle">
+                    <TextBlock Text="Green Deck Recipe" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" HorizontalTextAlignment="Center"/>
+                </Button>
+                <Button x:Name="CreateDeck4" Background="DarkSlateGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" BorderThickness="1" BorderBrush="DarkGray">
+                    <TextBlock Text="Black Deck Recipe" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" HorizontalTextAlignment="Center"/>
+                </Button>
+                <Button x:Name="CreateDeck5" Background="DarkSlateBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" BorderThickness="1" BorderBrush="DarkGray">
+                    <TextBlock Text="Blue Deck Recipe" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" HorizontalTextAlignment="Center"/>
+                </Button>
+            </controls:UniformGrid>
+
+            <controls:Expander.ContentOverlay>
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <TextBlock Text="TODO: Put already created decks in here"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                </Grid>
+            </controls:Expander.ContentOverlay>
+        </controls:Expander>
+        <controls:Expander x:Name="TrackDeckExpander"
+                                   Header="Show all deck statistics!"
+                                   HorizontalContentAlignment="Stretch"
+                                   IsExpanded="False"
+                                   ExpandDirection="Down"
+                                   Grid.Row="1">
+            <Grid>
+                <TextBlock HorizontalAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Text="TODO: List all decks" />
+            </Grid>
+
+            <controls:Expander.ContentOverlay>
+                <Grid Height="120">
+                    <TextBlock Text="TODO: Put recently updated stats here"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                </Grid>
+            </controls:Expander.ContentOverlay>
+        </controls:Expander>
+    </Grid>
+</Page>

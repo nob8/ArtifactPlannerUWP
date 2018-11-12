@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{EFE490D6-910A-49F0-BFEE-0674B70587D5}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArtifactPlanner</RootNamespace>
+    <AssemblyName>ArtifactPlanner</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>ArtifactPlanner_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeckBuilderClasses\Card.cs" />
+    <Compile Include="DeckBuilderClasses\CardDatabase.cs" />
+    <Compile Include="DeckBuilderClasses\Deck.cs" />
+    <Compile Include="DeckBuilderClasses\DeckDatabase.cs" />
+    <Compile Include="DeckBuilderClasses\Faction.cs" />
+    <Compile Include="DeckBuilderClasses\JsonCard.cs" />
+    <Compile Include="DeckBuilderClasses\Set.cs" />
+    <Compile Include="DeckBuilderClasses\ValveJsonCard.cs" />
+    <Compile Include="DeckBuilderClasses\ValveSetUtils.cs" />
+    <Compile Include="Views\Deck Builder.xaml.cs">
+      <DependentUpon>Deck Builder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Deck Tracker.xaml.cs">
+      <DependentUpon>Deck Tracker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Edit Saved.xaml.cs">
+      <DependentUpon>Edit Saved.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ArtifactPlanner_TemporaryKey.pfx" />
+    <Content Include="Assets\CardDefinitions\artifact-base-set.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Creeps\assassinsapprentice-min.jpg" />
+    <Content Include="Assets\Creeps\bronzelegionnaire-min.jpg" />
+    <Content Include="Assets\Creeps\centaurhunter-min.jpg" />
+    <Content Include="Assets\Creeps\championoftheancient-min.jpg" />
+    <Content Include="Assets\Creeps\cursedsatyr-min.jpg" />
+    <Content Include="Assets\Creeps\discipleofnevermore2-min.jpg" />
+    <Content Include="Assets\Creeps\emissaryofquorum-min.jpg" />
+    <Content Include="Assets\Creeps\hellbearcrippler-min.jpg" />
+    <Content Include="Assets\Creeps\houndofwar-min.jpg" />
+    <Content Include="Assets\Creeps\keenfolkgolem-min.jpg" />
+    <Content Include="Assets\Creeps\legionstandardbearer-min.jpg" />
+    <Content Include="Assets\Creeps\loyalbeast-min.jpg" />
+    <Content Include="Assets\Creeps\meleecreepdire-min.jpg" />
+    <Content Include="Assets\Creeps\meleecreepradiant-min.jpg" />
+    <Content Include="Assets\Creeps\mercenaryexiles-min.jpg" />
+    <Content Include="Assets\Creeps\oglodivandal-min.jpg" />
+    <Content Include="Assets\Creeps\ogreconscript-min.jpg" />
+    <Content Include="Assets\Creeps\ogrecorpsetosser-min.jpg" />
+    <Content Include="Assets\Creeps\plagueward-min.jpg" />
+    <Content Include="Assets\Creeps\prowlervanguard-min.jpg" />
+    <Content Include="Assets\Creeps\ravenhook-min.jpg" />
+    <Content Include="Assets\Creeps\ravenousmass-min.jpg" />
+    <Content Include="Assets\Creeps\rebeldecoy-min.jpg" />
+    <Content Include="Assets\Creeps\redmistpillager2-min.jpg" />
+    <Content Include="Assets\Creeps\relentlesszombie-min.jpg" />
+    <Content Include="Assets\Creeps\revtelconvoy-min.jpg" />
+    <Content Include="Assets\Creeps\roseleafdruid-min.jpg" />
+    <Content Include="Assets\Creeps\roseleafrejuvenator-min.jpg" />
+    <Content Include="Assets\Creeps\roseleafwall-min.jpg" />
+    <Content Include="Assets\Creeps\satyrduelist-min.jpg" />
+    <Content Include="Assets\Creeps\satyrmagician-min.jpg" />
+    <Content Include="Assets\Creeps\savagewolf-min.jpg" />
+    <Content Include="Assets\Creeps\selfishcleric-min.jpg" />
+    <Content Include="Assets\Creeps\sisteroftheveil-min.jpg" />
+    <Content Include="Assets\Creeps\smeevilarmsmaster-min.jpg" />
+    <Content Include="Assets\Creeps\smeevilblacksmith-min.jpg" />
+    <Content Include="Assets\Creeps\thunderhidealpha-min.jpg" />
+    <Content Include="Assets\Creeps\thunderhidepack-min.jpg" />
+    <Content Include="Assets\Creeps\tylerestatecensor-min.jpg" />
+    <Content Include="Assets\Creeps\untestedgrunt-min.jpg" />
+    <Content Include="Assets\Creeps\vhoulmartyr-min.jpg" />
+    <Content Include="Assets\Creeps\zombie-min.jpg" />
+    <Content Include="Assets\Heroes\abaddon-min.jpg" />
+    <Content Include="Assets\Heroes\axe2-min.jpg" />
+    <Content Include="Assets\Heroes\beastmaster-min.jpg" />
+    <Content Include="Assets\Heroes\bloodseeker-min.jpg" />
+    <Content Include="Assets\Heroes\bountyhunter-min.jpg" />
+    <Content Include="Assets\Heroes\bristleback-min.jpg" />
+    <Content Include="Assets\Heroes\centaurwarrunner-min.jpg" />
+    <Content Include="Assets\Heroes\chen2-min.jpg" />
+    <Content Include="Assets\Heroes\crystalmaiden-min.jpg" />
+    <Content Include="Assets\Heroes\drow-min.jpg" />
+    <Content Include="Assets\Heroes\earthshaker-min.jpg" />
+    <Content Include="Assets\Heroes\enchantress-min.jpg" />
+    <Content Include="Assets\Heroes\fahrvhanthedreamer-min.jpg" />
+    <Content Include="Assets\Heroes\jmuythewise-min.jpg" />
+    <Content Include="Assets\Heroes\kanna-min.jpg" />
+    <Content Include="Assets\Heroes\keefethebold-min.jpg" />
+    <Content Include="Assets\Heroes\legioncommander-min.jpg" />
+    <Content Include="Assets\Heroes\lich-min.jpg" />
+    <Content Include="Assets\Heroes\lion-min.jpg" />
+    <Content Include="Assets\Heroes\luna-min.jpg" />
+    <Content Include="Assets\Heroes\lycan-min.jpg" />
+    <Content Include="Assets\Heroes\magnus-min.jpg" />
+    <Content Include="Assets\Heroes\mazzie-min.jpg" />
+    <Content Include="Assets\Heroes\meepo-min.jpg" />
+    <Content Include="Assets\Heroes\necrophos-min.jpg" />
+    <Content Include="Assets\Heroes\ogremagi-min.jpg" />
+    <Content Include="Assets\Heroes\omniknight-min.jpg" />
+    <Content Include="Assets\Heroes\outworlddevourer-min.jpg" />
+    <Content Include="Assets\Heroes\phantomassassin-min.jpg" />
+    <Content Include="Assets\Heroes\prellex-min.jpg" />
+    <Content Include="Assets\Heroes\pugna-min.jpg" />
+    <Content Include="Assets\Heroes\rileythecunning-min.jpg" />
+    <Content Include="Assets\Heroes\rix-min.jpg" />
+    <Content Include="Assets\Heroes\skywrathmage-min.jpg" />
+    <Content Include="Assets\Heroes\sniper-min.jpg" />
+    <Content Include="Assets\Heroes\sorlakhan2-min.jpg" />
+    <Content Include="Assets\Heroes\stormspirit-min.jpg" />
+    <Content Include="Assets\Heroes\sven-min.jpg" />
+    <Content Include="Assets\Heroes\tidehunter-min.jpg" />
+    <Content Include="Assets\Heroes\timbersaw-min.jpg" />
+    <Content Include="Assets\Heroes\treantprotector-min.jpg" />
+    <Content Include="Assets\Heroes\ursa-min.jpg" />
+    <Content Include="Assets\Heroes\venomancer-min.jpg" />
+    <Content Include="Assets\Heroes\winterwyvern-min.jpg" />
+    <Content Include="Assets\Heroes\zeus-min.jpg" />
+    <Content Include="Assets\Improvements\aghanimssanctum-min.jpg" />
+    <Content Include="Assets\Improvements\altarofthemadmoon-min.jpg" />
+    <Content Include="Assets\Improvements\assaultladders2-min.jpg" />
+    <Content Include="Assets\Improvements\assureddestruction-min.jpg" />
+    <Content Include="Assets\Improvements\barracks-min.jpg" />
+    <Content Include="Assets\Improvements\bitterenemies-min.jpg" />
+    <Content Include="Assets\Improvements\conflagration2-min.jpg" />
+    <Content Include="Assets\Improvements\glyphofconfusion-min.jpg" />
+    <Content Include="Assets\Improvements\howlingmind-min.jpg" />
+    <Content Include="Assets\Improvements\ironfoggoldmine-min.jpg" />
+    <Content Include="Assets\Improvements\messengerrookery-min.jpg" />
+    <Content Include="Assets\Improvements\mistofavernus-min.jpg" />
+    <Content Include="Assets\Improvements\netherward-min.jpg" />
+    <Content Include="Assets\Improvements\pathofthebold-min.jpg" />
+    <Content Include="Assets\Improvements\pathofthecunning-min.jpg" />
+    <Content Include="Assets\Improvements\pathofthedreamer-min.jpg" />
+    <Content Include="Assets\Improvements\pathofthewise-min.jpg" />
+    <Content Include="Assets\Improvements\revtelinvestments-min.jpg" />
+    <Content Include="Assets\Improvements\selemenesfavor-min.jpg" />
+    <Content Include="Assets\Improvements\steamcannon-min.jpg" />
+    <Content Include="Assets\Improvements\steelreinforcement-min.jpg" />
+    <Content Include="Assets\Improvements\templeofwar-min.jpg" />
+    <Content Include="Assets\Improvements\theoath-min.jpg" />
+    <Content Include="Assets\Improvements\thetylerestate-min.jpg" />
+    <Content Include="Assets\Improvements\trebuchets-min.jpg" />
+    <Content Include="Assets\Improvements\unearthedsecrets-min.jpg" />
+    <Content Include="Assets\Improvements\unsupervisedartillery-min.jpg" />
+    <Content Include="Assets\Improvements\verdantrefuge-min.jpg" />
+    <Content Include="Assets\Items\apotheosisblade-min.jpg" />
+    <Content Include="Assets\Items\assassinsveil-min.jpg" />
+    <Content Include="Assets\Items\barbedmail-min.jpg" />
+    <Content Include="Assets\Items\bladeofthevigil2-min.jpg" />
+    <Content Include="Assets\Items\blinkdagger-min.jpg" />
+    <Content Include="Assets\Items\bookofthedead-min.jpg" />
+    <Content Include="Assets\Items\broadsword-min.jpg" />
+    <Content Include="Assets\Items\chainmail-min.jpg" />
+    <Content Include="Assets\Items\claymore-min.jpg" />
+    <Content Include="Assets\Items\fountainflask-min.jpg" />
+    <Content Include="Assets\Items\furlinedmantle-min.jpg" />
+    <Content Include="Assets\Items\goldenticket-min.jpg" />
+    <Content Include="Assets\Items\healingsalve-min.jpg" />
+    <Content Include="Assets\Items\helmofthedominator-min.jpg" />
+    <Content Include="Assets\Items\heroscape-min.jpg" />
+    <Content Include="Assets\Items\hornofthealpha2-min.jpg" />
+    <Content Include="Assets\Items\keenfolkmusket2-min.jpg" />
+    <Content Include="Assets\Items\keenfolkplate-min.jpg" />
+    <Content Include="Assets\Items\leatherarmor-min.jpg" />
+    <Content Include="Assets\Items\nyctashasguard-min.jpg" />
+    <Content Include="Assets\Items\obliteratingorb-min.jpg" />
+    <Content Include="Assets\Items\oldtechievest-min.jpg" />
+    <Content Include="Assets\Items\phaseboots-min.jpg" />
+    <Content Include="Assets\Items\platemail-min.jpg" />
+    <Content Include="Assets\Items\poachingknife-min.jpg" />
+    <Content Include="Assets\Items\potionofknowledge-min.jpg" />
+    <Content Include="Assets\Items\redmistmaul-min.jpg" />
+    <Content Include="Assets\Items\ristulemblem-min.jpg" />
+    <Content Include="Assets\Items\rumusquevestments-min.jpg" />
+    <Content Include="Assets\Items\seraphimshield-min.jpg" />
+    <Content Include="Assets\Items\shieldofbasilius-min.jpg" />
+    <Content Include="Assets\Items\shivasguard-min.jpg" />
+    <Content Include="Assets\Items\shopdeed-min.jpg" />
+    <Content Include="Assets\Items\shortsword-min.jpg" />
+    <Content Include="Assets\Items\stonehallcloak-min.jpg" />
+    <Content Include="Assets\Items\stonehallpike-min.jpg" />
+    <Content Include="Assets\Items\stonehallplate-min.jpg" />
+    <Content Include="Assets\Items\townportalscroll-min.jpg" />
+    <Content Include="Assets\Items\travelerscloak-min.jpg" />
+    <Content Include="Assets\Items\vestureofthetyrant-min.jpg" />
+    <Content Include="Assets\Items\wingfallhammer-min.jpg" />
+    <Content Include="Assets\Spells\actofdefiance-min.jpg" />
+    <Content Include="Assets\Spells\allseeingonesfavor-min.jpg" />
+    <Content Include="Assets\Spells\andoneforme-min.jpg" />
+    <Content Include="Assets\Spells\annihilation-min.jpg" />
+    <Content Include="Assets\Spells\aphoticshield-min.jpg" />
+    <Content Include="Assets\Spells\arcanecensure-min.jpg" />
+    <Content Include="Assets\Spells\assassinate-min.jpg" />
+    <Content Include="Assets\Spells\battlefieldcontrol-min.jpg" />
+    <Content Include="Assets\Spells\berserkerscall2-min.jpg" />
+    <Content Include="Assets\Spells\betterlatethannever-min.jpg" />
+    <Content Include="Assets\Spells\bloodrage-min.jpg" />
+    <Content Include="Assets\Spells\boltofdamocles-min.jpg" />
+    <Content Include="Assets\Spells\buyingtime-min.jpg" />
+    <Content Include="Assets\Spells\chainfrost-min.jpg" />
+    <Content Include="Assets\Spells\clearthedeck-min.jpg" />
+    <Content Include="Assets\Spells\collateraldamage-min.jpg" />
+    <Content Include="Assets\Spells\combattraining-min.jpg" />
+    <Content Include="Assets\Spells\compel-min.jpg" />
+    <Content Include="Assets\Spells\coordinatedassault-min.jpg" />
+    <Content Include="Assets\Spells\corrosivemist-min.jpg" />
+    <Content Include="Assets\Spells\coupdegrace-min.jpg" />
+    <Content Include="Assets\Spells\cunningplan-min.jpg" />
+    <Content Include="Assets\Spells\defensivebloom-min.jpg" />
+    <Content Include="Assets\Spells\diabolicrevelation-min.jpg" />
+    <Content Include="Assets\Spells\dimensionalportal2-min.jpg" />
+    <Content Include="Assets\Spells\dirtydeeds-min.jpg" />
+    <Content Include="Assets\Spells\dividedwestand-min.jpg" />
+    <Content Include="Assets\Spells\divinepurpose2-min.jpg" />
+    <Content Include="Assets\Spells\doubleedge-min.jpg" />
+    <Content Include="Assets\Spells\duel-min.jpg" />
+    <Content Include="Assets\Spells\echoslam-min.jpg" />
+    <Content Include="Assets\Spells\eclipse-min.jpg" />
+    <Content Include="Assets\Spells\empower-min.jpg" />
+    <Content Include="Assets\Spells\enoughmagic-min.jpg" />
+    <Content Include="Assets\Spells\enrage-min.jpg" />
+    <Content Include="Assets\Spells\escaperoute-min.jpg" />
+    <Content Include="Assets\Spells\fightinginstinct-min.jpg" />
+    <Content Include="Assets\Spells\fightthroughthepain-min.jpg" />
+    <Content Include="Assets\Spells\foresight-min.jpg" />
+    <Content Include="Assets\Spells\forwardcharge-min.jpg" />
+    <Content Include="Assets\Spells\friendlyfire-min.jpg" />
+    <Content Include="Assets\Spells\frostbite-min.jpg" />
+    <Content Include="Assets\Spells\gank-min.jpg" />
+    <Content Include="Assets\Spells\grandmelee2-min.jpg" />
+    <Content Include="Assets\Spells\grazingshot-min.jpg" />
+    <Content Include="Assets\Spells\handofgod2-min.jpg" />
+    <Content Include="Assets\Spells\heartstopperaura-min.jpg" />
+    <Content Include="Assets\Spells\heroicresolve-min.jpg" />
+    <Content Include="Assets\Spells\hipfire-min.jpg" />
+    <Content Include="Assets\Spells\intimidation-min.jpg" />
+    <Content Include="Assets\Spells\ironbranchprotection-min.jpg" />
+    <Content Include="Assets\Spells\krakenshell-min.jpg" />
+    <Content Include="Assets\Spells\manadrain-min.jpg" />
+    <Content Include="Assets\Spells\murderplot-min.jpg" />
+    <Content Include="Assets\Spells\mysticflare-min.jpg" />
+    <Content Include="Assets\Spells\neworders-min.jpg" />
+    <Content Include="Assets\Spells\noaccident-min.jpg" />
+    <Content Include="Assets\Spells\payday2-min.jpg" />
+    <Content Include="Assets\Spells\pickafight-min.jpg" />
+    <Content Include="Assets\Spells\pickoff-min.jpg" />
+    <Content Include="Assets\Spells\poisedtostrike-min.jpg" />
+    <Content Include="Assets\Spells\preyontheweak-min.jpg" />
+    <Content Include="Assets\Spells\primalroar-min.jpg" />
+    <Content Include="Assets\Spells\relentlesspursuit-min.jpg" />
+    <Content Include="Assets\Spells\remotedetonation-min.jpg" />
+    <Content Include="Assets\Spells\risinganger-min.jpg" />
+    <Content Include="Assets\Spells\slay-min.jpg" />
+    <Content Include="Assets\Spells\sowvenom-min.jpg" />
+    <Content Include="Assets\Spells\springthetrap-min.jpg" />
+    <Content Include="Assets\Spells\strafingrun-min.jpg" />
+    <Content Include="Assets\Spells\suckerpunch-min.jpg" />
+    <Content Include="Assets\Spells\takeaim-min.jpg" />
+    <Content Include="Assets\Spells\thecoverofnight-min.jpg" />
+    <Content Include="Assets\Spells\thundergodswrath2-min.jpg" />
+    <Content Include="Assets\Spells\timeoftriumph-min.jpg" />
+    <Content Include="Assets\Spells\towerbarrage-min.jpg" />
+    <Content Include="Assets\Spells\track-min.jpg" />
+    <Content Include="Assets\Spells\truthtopower-min.jpg" />
+    <Content Include="Assets\Spells\ventriloquy-min.jpg" />
+    <Content Include="Assets\Spells\viscousnasalgoo-min.jpg" />
+    <Content Include="Assets\Spells\winterscurse-min.jpg" />
+    <Content Include="Assets\Spells\wrathofgold-min.jpg" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Views\Deck Builder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Deck Tracker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Edit Saved.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.0-preview1-26926-04</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.DeveloperTools">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="TrieNet">
+      <Version>1.0.3.26316</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CardDatabaseTest|x86'">
+    <OutputPath>bin\x86\CardDatabaseTest\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CardDatabaseTest|ARM'">
+    <OutputPath>bin\ARM\CardDatabaseTest\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CardDatabaseTest|x64'">
+    <OutputPath>bin\x64\CardDatabaseTest\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

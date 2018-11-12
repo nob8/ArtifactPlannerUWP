@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="ArtifactPlanner.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ArtifactPlanner"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Black" VerticalAlignment="Stretch">
+        <NavigationView x:Name="mainNavigation"
+                        Loaded="mainNavigation_Loaded" 
+                        SelectionChanged="nvTopLevelNav_SelectionChanged"
+                        ItemInvoked="nvTopLevelNav_ItemInvoked"
+                        IsSettingsVisible="True"
+                        IsBackEnabled="False"
+                        IsBackButtonVisible="Collapsed"
+                        IsTabStop="False"
+                        PaneDisplayMode="Top" RequestedTheme="Dark">
+            <NavigationView.PaneHeader>
+                    <NavigationViewItemHeader x:Name="AppTitle" Content="ArtifactPlanner!" IsEnabled="False"/>
+            </NavigationView.PaneHeader>
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Home" Content="Home" Tag="Home_Page"/>
+                <NavigationViewItem Icon="DockRight" Content="Build a deck" Tag="Deck_Builder"/>
+                <NavigationViewItem Icon="FourBars" Content="Track deck results" Tag="Deck_Tracker"/>
+                <NavigationViewItem Icon="Edit" Content="Edit saved decks" Tag="Edit_Decks"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="contentFrame"></Frame>
+        </NavigationView>
+    </Grid>
+</Page>
